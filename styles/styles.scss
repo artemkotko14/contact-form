@@ -1,0 +1,272 @@
+@import "./variables";
+@mixin flex-center($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+@function rem($px, $base: 16) {
+  @return ($px / $base) * 1rem;
+} // converts px to rem
+@mixin heading {
+  font-size: 2rem;
+  line-height: 100%;
+  letter-spacing: -1px;
+}
+@mixin body-md {
+  font-size: rem(18);
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+@mixin body-sm {
+  font-size: 1rem;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+
+body {
+  min-height: 100svh;
+  font-family: "Karla", sans-serif;
+  @include flex-center(column);
+  background-color: $green-200;
+  color: $grey-900;
+}
+main {
+  width: 100%;
+  @include flex-center(column);
+}
+.sr-only {
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.error-message {
+  display: none;
+  color: $red;
+}
+.form-group {
+  @include flex-center(column);
+  gap: 2.5rem;
+  max-width: rem(343);
+  background-color: $white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  align-items: flex-start;
+  position: relative;
+
+  width: 100%;
+}
+.form-content {
+  @include flex-center(column);
+  gap: 2rem;
+  align-items: flex-start;
+  width: 100%;
+}
+.form-fields {
+  @include flex-center(column);
+  gap: 1.5rem;
+  align-items: flex-start;
+  width: 100%;
+  @include body-sm();
+}
+.title {
+  color: $grey-900;
+  @include heading();
+}
+.names {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.field-container,
+fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+.required {
+  color: $green-600;
+}
+fieldset {
+  all: unset;
+  width: 100%;
+}
+.radio-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.radio-input {
+  display: flex;
+  align-items: center;
+  gap: rem(12);
+  border: 1px solid $grey-500;
+  border-radius: 8px;
+  padding: rem(11) 1.5rem;
+  @include body-md();
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    border: 1px solid $green-600;
+  }
+  & .radio:hover,
+  & label:hover {
+    cursor: pointer;
+  }
+}
+.radio-container {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: rem(2.5);
+  @include flex-center(column);
+}
+.radio {
+  width: auto;
+  accent-color: $green-600; //changes the selected radio color
+}
+.selected-radio {
+  background-color: $green-200;
+  border-color: $green-600;
+}
+.qt-title {
+  margin-bottom: 1rem;
+}
+
+.input-field {
+  border: 1px solid $grey-500;
+  border-radius: 8px;
+  width: 100%;
+  padding: rem(12) 1.5rem;
+  color: $grey-900;
+  height: rem(51);
+  @include body-md();
+}
+.input-field:hover,
+.input-field:focus {
+  outline: none;
+  cursor: pointer;
+  border: 1px solid $green-600;
+}
+
+.checkbox-group {
+  display: flex;
+  padding-right: rem(7);
+  gap: 1rem;
+  width: 100%;
+  & input {
+    width: 1.5rem;
+    margin: rem(3);
+  }
+  & label {
+    padding-right: 1rem;
+    @include body-sm();
+  }
+}
+
+.checkbox-group label,
+.checkbox-group input {
+  cursor: pointer;
+}
+.checkbox {
+  accent-color: $green-600;
+}
+#message {
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  min-height: rem(240);
+}
+.form-button {
+  background-color: $green-600;
+  color: $white;
+  @include body-md();
+  outline: none;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid transparent;
+  width: 100%;
+  height: rem(59);
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), $green-600;
+    // semi-transparent black layer that covers the entire button
+
+    border: 1px solid #0b0b43;
+  }
+}
+.message-success-container {
+  position: absolute;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  outline: none;
+}
+.message-success {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: $white;
+  background-color: $grey-900;
+  border-radius: 12px;
+  width: rem(327);
+  padding: 1.5rem;
+  & p {
+    @include body-sm();
+    color: $green-200;
+  }
+  & h2 {
+    font-weight: bold;
+    @include body-md();
+    color: $white;
+  }
+}
+.message-success-header {
+  @include flex-center(row);
+  gap: 0.5rem;
+}
+.hidden {
+  opacity: 0%;
+  transition: opacity 0.3s ease;
+}
+@media screen and (min-width: 600px) {
+  .form-group {
+    max-width: rem(690);
+    padding: rem(40);
+  }
+  .radio-inputs {
+    flex-direction: row;
+  }
+  .radio-input {
+    width: 100%;
+  }
+  .names {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  #message {
+    min-height: rem(132);
+  }
+  .message-success {
+    width: rem(450);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .form-group {
+    max-width: rem(736);
+  }
+  #message {
+    min-height: rem(105);
+  }
+}

@@ -1,0 +1,301 @@
+body {
+  min-height: 100svh;
+  font-family: "Karla", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(148, 38%, 91%);
+  color: hsl(187, 24%, 22%);
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sr-only {
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.error-message {
+  display: none;
+  color: hsl(0, 66%, 54%);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  max-width: 21.4375rem;
+  background-color: hsl(0, 100%, 100%);
+  padding: 1.5rem;
+  border-radius: 16px;
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  align-items: flex-start;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+
+.title {
+  color: hsl(187, 24%, 22%);
+  font-size: 2rem;
+  line-height: 100%;
+  letter-spacing: -1px;
+}
+
+.names {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.field-container,
+fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.required {
+  color: hsl(169, 82%, 27%);
+}
+
+fieldset {
+  all: unset;
+  width: 100%;
+}
+
+.radio-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.radio-input {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid hsl(186, 15%, 59%);
+  border-radius: 8px;
+  padding: 0.6875rem 1.5rem;
+  font-size: 1.125rem;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+.radio-input:hover, .radio-input:focus {
+  cursor: pointer;
+  border: 1px solid hsl(169, 82%, 27%);
+}
+.radio-input .radio:hover, .radio-input label:hover {
+  cursor: pointer;
+}
+
+.radio-container {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0.15625rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.radio {
+  width: auto;
+  accent-color: hsl(169, 82%, 27%);
+}
+
+.selected-radio {
+  background-color: hsl(148, 38%, 91%);
+  border-color: hsl(169, 82%, 27%);
+}
+
+.qt-title {
+  margin-bottom: 1rem;
+}
+
+.input-field {
+  border: 1px solid hsl(186, 15%, 59%);
+  border-radius: 8px;
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  color: hsl(187, 24%, 22%);
+  height: 3.1875rem;
+  font-size: 1.125rem;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+
+.input-field:hover,
+.input-field:focus {
+  outline: none;
+  cursor: pointer;
+  border: 1px solid hsl(169, 82%, 27%);
+}
+
+.checkbox-group {
+  display: flex;
+  padding-right: 0.4375rem;
+  gap: 1rem;
+  width: 100%;
+}
+.checkbox-group input {
+  width: 1.5rem;
+  margin: 0.1875rem;
+}
+.checkbox-group label {
+  padding-right: 1rem;
+  font-size: 1rem;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+
+.checkbox-group label,
+.checkbox-group input {
+  cursor: pointer;
+}
+
+.checkbox {
+  accent-color: hsl(169, 82%, 27%);
+}
+
+#message {
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  min-height: 15rem;
+}
+
+.form-button {
+  background-color: hsl(169, 82%, 27%);
+  color: hsl(0, 100%, 100%);
+  font-size: 1.125rem;
+  line-height: 150%;
+  letter-spacing: 0px;
+  outline: none;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid transparent;
+  width: 100%;
+  height: 3.6875rem;
+}
+.form-button:hover, .form-button:focus {
+  cursor: pointer;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), hsl(169, 82%, 27%);
+  border: 1px solid #0b0b43;
+}
+
+.message-success-container {
+  position: absolute;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  outline: none;
+}
+
+.message-success {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: hsl(0, 100%, 100%);
+  background-color: hsl(187, 24%, 22%);
+  border-radius: 12px;
+  width: 20.4375rem;
+  padding: 1.5rem;
+}
+.message-success p {
+  font-size: 1rem;
+  line-height: 150%;
+  letter-spacing: 0px;
+  color: hsl(148, 38%, 91%);
+}
+.message-success h2 {
+  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 150%;
+  letter-spacing: 0px;
+  color: hsl(0, 100%, 100%);
+}
+
+.message-success-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hidden {
+  opacity: 0%;
+  transition: opacity 0.3s ease;
+}
+
+@media screen and (min-width: 600px) {
+  .form-group {
+    max-width: 43.125rem;
+    padding: 2.5rem;
+  }
+  .radio-inputs {
+    flex-direction: row;
+  }
+  .radio-input {
+    width: 100%;
+  }
+  .names {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  #message {
+    min-height: 8.25rem;
+  }
+  .message-success {
+    width: 28.125rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .form-group {
+    max-width: 46rem;
+  }
+  #message {
+    min-height: 6.5625rem;
+  }
+}/*# sourceMappingURL=styles.css.map */

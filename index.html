@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <title>Frontend Mentor | Contact form</title>
+
+</head>
+
+<body>
+  <main>
+    <form action="#" class="form-group" aria-labelledby="form-title" novalidate>
+      <div class="form-content">
+        <h1 class="title" id="form-title">Contact Us</h1>
+        <div class="form-fields">
+          <div class="names">
+            <div class="field-container">
+              <label for="first-name">
+                First Name
+                <span class="required" aria-hidden="true">*</span>
+
+              </label>
+              <input type="text" id="first-name" class="input-field required-field" name="given-name"
+                autocomplete="given-name" aria-describedby="first-name-error" required>
+              <span id="first-name-error" class="error-message">
+                This field is required
+              </span>
+            </div>
+            <div class="field-container">
+              <label for="last-name">
+                Last Name
+                <span class="required" aria-hidden="true">*</span>
+
+              </label>
+              <input type="text" id="last-name" class="input-field required-field" name="family-name"
+                autocomplete="family-name" aria-describedby="last-name-error" required>
+              <span id="last-name-error" class="error-message">
+                This field is required
+              </span>
+            </div>
+          </div>
+
+          <div class="field-container">
+            <label for="email">
+              Email Address
+              <span class="required" aria-hidden="true">*</span>
+
+            </label>
+            <input type="email" id="email" class="input-field required-field" name="email" autocomplete="email"
+              aria-describedby="email-required-error email-error" required>
+            <span id="email-required-error" class="error-message">
+              This field is required
+            </span>
+            <span id="email-error" class="error-message">Please enter a valid email address.</span>
+          </div>
+
+          <div class="field-container">
+            <fieldset aria-describedby="query-error">
+              <legend class="qt-title">Query Type <span class="required" aria-hidden="true">*</span></legend>
+              <div class="radio-inputs">
+                <div class="radio-input">
+                  <div class="radio-container">
+                    <input type="radio" class="radio" id="general-request" name="qt" value="general">
+                  </div>
+                  <label for="general-request">General Enquiry</label>
+                </div>
+                <div class="radio-input">
+                  <div class="radio-container">
+                    <input type="radio" class="radio" id="support-request" name="qt" value="support">
+                  </div>
+                  <label for="support-request">Support Request</label>
+                </div>
+              </div>
+            </fieldset>
+            <span id="query-error" class="error-message">Please select a query type</span>
+          </div>
+
+
+          <div class="field-container">
+            <label for="message">
+              Message
+              <span class="required" aria-hidden="true">*</span>
+
+            </label>
+            <textarea name="message" id="message" class="input-field required-field" aria-describedby="message-error"
+              required></textarea>
+            <span id="message-error" class="error-message">
+              This field is required
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="field-container">
+        <div class="checkbox-group">
+          <input type="checkbox" class="checkbox required-field" id="consent" name="consent" value="yes"
+            aria-describedby="consent-error" required>
+          <label for="consent">I consent to being contacted by the team
+            <span class="required" aria-hidden="true">*</span>
+
+          </label>
+        </div>
+        <span id="consent-error" class="error-message">To submit this form, please consent to being contacted</span>
+      </div>
+
+      <button class="form-button" id="submit-btn">Submit</button>
+    </form>
+    <div class="message-success-container hidden" id="message-success" role="status" aria-live="polite"
+      aria-atomic="true" aria-hidden="true" tabindex="-1">
+      <div class="message-success">
+        <div class="message-success-header">
+          <img src="/assets/images/icon-success-check.svg" alt="">
+          <h2>Message Sent!</h2>
+        </div>
+        <p>Thanks for completing the form. We'll be in touch soon!</p>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
