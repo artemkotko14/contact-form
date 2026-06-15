@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./screenshot.png)
 
 ### Links
 
@@ -50,25 +50,36 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+background:
+      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), $green-600;
 }
 ```
 
+This creates two background layers:
+
+1. linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))
+
+- A semi-transparent black layer (50% opacity).
+- Because the start and end colors are the same, it doesn't actually look like a gradient—it acts as a dark overlay.
+
+2. $green-600
+   The solid green background underneath.
+
+The result is that the button keeps its green color but appears darker, which is a common hover effect. It's similar to placing a translucent black sheet on top of the green background.
+
+`input.validity.valid` is a built-in JavaScript property that checks whether an input passes all of its HTML validation rules. It returns `true` if the field is valid and `false` if it violates any constraints, such as being empty when required is present, having an invalid email format, or not matching a specified pattern. This makes it a simple way to determine whether a form field contains acceptable input.
+
+`window.scrollTo()` is a JavaScript method that scrolls the page to a specific position. In this project, it is used to automatically move the user's view to the top of the page when the success message appears, ensuring that important feedback is immediately visible. By using behavior: "smooth", the page scrolls gradually instead of jumping instantly, creating a better user experience
+
 ```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
+window.scrollTo({
+  top: 0,
+  behavior: "smooth",
+});
 ```
+
+`aria-atomic="true"` tells screen readers to announce the entire contents of a live region when any part of it changes. In this project, it ensures that when the success message appears, the screen reader reads the complete message ("Message Sent! Thanks for completing the form. We'll be in touch soon.") instead of announcing only the specific text that changed. This helps users receive the full context of the update.
 
 ### Continued development
 
