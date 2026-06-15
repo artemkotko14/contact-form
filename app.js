@@ -5,6 +5,7 @@ const form = document.querySelector(".form-group");
 const queryError = document.getElementById("query-error");
 const radios = document.querySelectorAll(".radio");
 const emailError = document.getElementById("email-error");
+const emailRequiredError = document.getElementById("email-required-error");
 const emailInput = document.getElementById("email");
 const errorMessages = document.querySelectorAll(".error-message");
 const consentInput = document.getElementById("consent");
@@ -58,10 +59,10 @@ function checkRadios() {
 }
 function checkAllInputs() {
   checkRadios();
+  checkEmail();
   requiredFields.forEach((input) => {
     validateField(input);
   });
-  checkEmail();
   const firstVisibleError = [...errorMessages].find(
     (error) => error.style.display === "block",
   );
@@ -111,13 +112,22 @@ function checkEmail() {
   const chromeEmailRegex =
     /^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~.-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/i;
   const validEmail = chromeEmailRegex.test(emailInput.value);
-  if (emailInput.validity.valid) {
+  if (emailInput.value.trim() !== "") {
+    emailRequiredError.style.display = "none";
+    emailInput.setAttribute("aria-invalid", "false");
     if (validEmail) {
       emailError.style.display = "none";
       emailInput.style.borderColor = "hsl(186, 15%, 59%)";
+      emailInput.setAttribute("aria-invalid", "false");
     } else {
       emailError.style.display = "block";
       emailInput.style.borderColor = "red";
+      emailInput.setAttribute("aria-invalid", "true");
     }
+  } else {
+    emailError.style.display = "none";
+    emailRequiredError.style.display = "block";
+    emailInput.style.borderColor = "red";
+    emailInput.setAttribute("aria-invalid", "true");
   }
 }

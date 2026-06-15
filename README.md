@@ -58,12 +58,12 @@ background:
 
 This creates two background layers:
 
-1. linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))
+1. `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))`
 
 - A semi-transparent black layer (50% opacity).
 - Because the start and end colors are the same, it doesn't actually look like a gradient—it acts as a dark overlay.
 
-2. $green-600
+2. `$green-600`
    The solid green background underneath.
 
 The result is that the button keeps its green color but appears darker, which is a common hover effect. It's similar to placing a translucent black sheet on top of the green background.
