@@ -170,6 +170,11 @@ fieldset {
   border: 1px solid hsl(169, 82%, 27%);
 }
 
+.input-field.error-input:hover,
+.input-field.error-input:focus {
+  border-color: red;
+}
+
 .checkbox-group {
   display: flex;
   padding-right: 0.4375rem;
@@ -267,6 +272,14 @@ fieldset {
   opacity: 0%;
   transition: opacity 0.3s ease;
   visibility: hidden;
+}
+
+.error-input {
+  border-color: red;
+}
+
+.regular-input {
+  border-color: hsl(186, 15%, 59%);
 }
 
 @media screen and (min-width: 600px) {

@@ -155,7 +155,10 @@ fieldset {
   cursor: pointer;
   border: 1px solid $green-600;
 }
-
+.input-field.error-input:hover,
+.input-field.error-input:focus {
+  border-color: red;
+}
 .checkbox-group {
   display: flex;
   padding-right: rem(7);
@@ -237,6 +240,13 @@ fieldset {
   opacity: 0%;
   transition: opacity 0.3s ease;
   visibility: hidden;
+}
+
+.error-input {
+  border-color: red;
+}
+.regular-input {
+  border-color: $grey-500;
 }
 @media screen and (min-width: 600px) {
   .form-group {

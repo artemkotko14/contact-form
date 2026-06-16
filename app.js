@@ -16,11 +16,13 @@ const validateField = (input) => {
     .querySelector(".error-message");
   if (!input.validity.valid) {
     errorMessage.style.display = "block";
-    input.style.borderColor = "red";
+    input.classList.add("error-input");
+    input.classList.remove("regular-input");
     input.setAttribute("aria-invalid", "true");
   } else {
     errorMessage.style.display = "none";
-    input.style.borderColor = "hsl(186, 15%, 59%)";
+    input.classList.add("regular-input");
+    input.classList.remove("error-input");
     input.setAttribute("aria-invalid", "false");
   }
 };
@@ -117,17 +119,20 @@ function checkEmail() {
     emailInput.setAttribute("aria-invalid", "false");
     if (validEmail) {
       emailError.style.display = "none";
-      emailInput.style.borderColor = "hsl(186, 15%, 59%)";
+      emailInput.classList.add("regular-input");
+      emailInput.classList.remove("error-input");
       emailInput.setAttribute("aria-invalid", "false");
     } else {
       emailError.style.display = "block";
-      emailInput.style.borderColor = "red";
+      emailInput.classList.add("error-input");
+      emailInput.classList.remove("regular-input");
       emailInput.setAttribute("aria-invalid", "true");
     }
   } else {
     emailError.style.display = "none";
     emailRequiredError.style.display = "block";
-    emailInput.style.borderColor = "red";
+    emailInput.classList.add("error-input");
+    emailInput.classList.remove("regular-input");
     emailInput.setAttribute("aria-invalid", "true");
   }
 }
