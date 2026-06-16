@@ -52,7 +52,6 @@ function checkRadios() {
       .closest(".radio-container")
       .closest(".radio-input");
     radioInput.classList.add("selected-radio");
-    console.log(radioInput);
   } else {
     queryError.style.display = "block";
   }
@@ -106,6 +105,7 @@ function clearFormFields() {
   });
   consentInput.checked = false;
   selectedRadioRemove();
+  emailInput.value = "";
 }
 emailInput.addEventListener("blur", checkEmail);
 function checkEmail() {

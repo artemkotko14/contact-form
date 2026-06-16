@@ -236,6 +236,7 @@ fieldset {
 .hidden {
   opacity: 0%;
   transition: opacity 0.3s ease;
+  visibility: hidden;
 }
 @media screen and (min-width: 600px) {
   .form-group {
